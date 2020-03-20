@@ -1,10 +1,10 @@
-<img src="logo.png" width="400">
+<img src="xpresso_logo.png" width="400">
 
 # Xpresso: Predicting gene expression levels from genomic sequence
 
 This repository is intended to accompany our manuscript and enhance the reproducibility of our results. For more information please refer to:
 
-Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence using deep convolutional neural networks](https://www.biorxiv.org/content/10.1101/416685v2). _**bioRxiv**_. (2018).
+Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence using deep convolutional neural networks](https://www.biorxiv.org/content/10.1101/416685v2). _**Cell Reports**_. (2020).
 
 These tools can be used in a variety of organisms and cell types of interest to:
 
@@ -19,7 +19,7 @@ If you find our code or predictions to be helpful for your work, please cite the
 
 
 # Dependencies for running entire pipeline:
-* Python modules: numpy, h5py, pandas, sklearn, keras (tested on v2.0.8)
+* Python modules: numpy, h5py, pandas, sklearn, keras (tested on v2.0.8), hyperopt, tensorflow, biopython
 
 * R libraries: LSD, data.table, latticeExtra, Biostrings, rhdf5, ROCR, gplots
 
@@ -42,5 +42,11 @@ files are missing, making the code unusable, or if you identify a major problem 
 raise a Github issue.
 
 In each Figure's folder, change directories to it and please read the file "runme.sh" first as it provides a general overview of relevant commands that were used sequentially to pre-process the data and generate the figures.
+
+Run the following command in the base Xpresso directory to download the associated datapack and data
+preparation scripts:
+
+`wget -r -np -nH --reject "index.html*" --cut-dirs 5 \
+ https://krishna.gs.washington.edu/content/members/vagar/Xpresso/data/datasets/`
 
 # Additional notes
