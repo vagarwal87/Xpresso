@@ -6,4 +6,4 @@ alldicts = trials.trials
 loss = trials.losses()
 
 for i in range(len(loss)):
-    print str(int(alldicts[i]['misc']['vals']['leftpos'][0]))+'\t'+str(int(alldicts[i]['misc']['vals']['rightpos'][0]))+'\t'+str(loss[i])+'\t'+str(alldicts[i]['misc']['vals'])
+    print(str(int(alldicts[i]['misc']['vals']['leftpos'][0]))+'\t'+str(int(alldicts[i]['misc']['vals']['rightpos'][0]))+'\t'+str(loss[i])+'\t'+str(alldicts[i]['misc']['vals']))
