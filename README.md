@@ -55,4 +55,4 @@ The figures will link to this folder accordingly.
 
 Start training models and generating predictions quickly using the iPython Notebook,
 or open it in Google Colab to get up to use a cloud GPU with this link:
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/vagarwal87/bdd33e66fa2c59c41409ca47e7132e61/xpresso.ipynb]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/vagarwal87/bdd33e66fa2c59c41409ca47e7132e61/xpresso.ipynb)
