@@ -51,8 +51,11 @@ preparation scripts:
 
 The figures will link to this folder accordingly.
 
-#Colab
+# Colab
 
 Start training models and generating predictions quickly using the iPython Notebook,
 or open it in Google Colab to get up to use a cloud GPU with this link:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/vagarwal87/bdd33e66fa2c59c41409ca47e7132e61/xpresso.ipynb)
+
+**Note: The Colab generates predictions on a FASTA file of arbitrary DNA sequences without considering mRNA half-life features. To consider half-life features, one must prepare the full test file as shown
+in the datapack and Fig1_S2/**
