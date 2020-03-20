@@ -1,4 +1,4 @@
-<img src="xpresso_logo.png" width="400">
+<img src="xpresso_logo.png" width="200">
 
 # Xpresso: Predicting gene expression levels from genomic sequence
 
