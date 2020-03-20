@@ -4,7 +4,7 @@
 
 This repository is intended to accompany our manuscript and enhance the reproducibility of our results. For more information please refer to:
 
-Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence using deep convolutional neural networks](https://www.biorxiv.org/content/10.1101/416685v2). _**Cell Reports**_. (2020).
+Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence using deep convolutional neural networks](https://www.biorxiv.org/content/10.1101/416685v2). 2020. _Cell Reports_.
 
 These tools can be used in a variety of organisms and cell types of interest to:
 
@@ -19,17 +19,17 @@ If you find our code or predictions to be helpful for your work, please cite the
 
 
 # Dependencies for running entire pipeline:
-* Python modules: numpy, h5py, pandas, sklearn, keras (tested on v2.0.8), hyperopt, tensorflow, biopython
+* Python3 modules: numpy, h5py, pandas, sklearn, keras (>=2.2.4-tf), hyperopt, biopython
 
 * R libraries: LSD, data.table, latticeExtra, Biostrings, rhdf5, ROCR, gplots
 
-* [TensorFlow (tested on v1.3.0)] (https://www.tensorflow.org/install/)
+* [TensorFlow (>=1.15.0)](https://www.tensorflow.org/install/)
 
-* [The MEME Suite] (http://meme-suite.org/doc/download.html?man_type=web)
+* [The MEME Suite](http://meme-suite.org/doc/download.html?man_type=web)
 
 * [UCSC tools](http://hgdownload.soe.ucsc.edu/downloads.html#source_downloads) installation, including bigBedToBed
 
-* [BEDTools] (https://github.com/arq5x/bedtools2/releases)
+* [BEDTools](https://github.com/arq5x/bedtools2/releases)
 
 # Instructions for use
 
@@ -49,4 +49,10 @@ preparation scripts:
 `wget -r -np -nH --reject "index.html*" --cut-dirs 5 \
  https://krishna.gs.washington.edu/content/members/vagar/Xpresso/data/datasets/`
 
-# Additional notes
+The figures will link to this folder accordingly.
+
+#Colab
+
+Start training models and generating predictions quickly using the iPython Notebook,
+or open it in Google Colab to get up to use a cloud GPU with this link:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/vagarwal87/bdd33e66fa2c59c41409ca47e7132e61/xpresso.ipynb]

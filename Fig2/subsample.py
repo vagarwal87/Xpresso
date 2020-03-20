@@ -8,7 +8,7 @@ def main():
     parser = OptionParser(usage)
     (options,args) = parser.parse_args()
     if len(args) != 3:
-        print args
+        print(args)
         sys.exit('Must provide number of subsamples, input directory, and output directory')
     counts, in_dir, out_dir = args
     counts = int(counts)
@@ -17,7 +17,7 @@ def main():
     file = h5py.File(os.path.join(in_dir, 'train.h5'), 'r')
     X_halflife, X_promoter, y, geneName = file['data'], file['promoter'], file['label'], file['geneName']
     for i in range(10):
-        print 'sample %d' % i
+        print('sample %d' % i)
         os.symlink(os.path.join(os.path.realpath(in_dir), 'valid.h5'), os.path.join(out_dir, str(i)+'valid.h5'))
         os.symlink(os.path.join(os.path.realpath(in_dir), 'test.h5'), os.path.join(out_dir, str(i)+'test.h5'))
         h5f = h5py.File(os.path.join(out_dir, str(i)+'train.h5'), 'w')

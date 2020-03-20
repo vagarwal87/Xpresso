@@ -11,7 +11,7 @@ def main():
     (options,args) = parser.parse_args()
 
     if len(args) != 4:
-        print args
+        print(args)
         parser.error('Must provide mode hyperparameter file and 2-column file to generate predictions for')
     else:
         param_file = args[0]
@@ -40,10 +40,10 @@ def main():
             tmpseqs[:,leftpos:(leftpos+seqs.shape[1]),:] = seqs
             seqs = tmpseqs
         else:
-            print >> sys.stderr, 'Sequences are above the allowable size of 10500nt'
+            print('Sequences are above the allowable size of 10500nt')
             sys.exit()
     halflifedata = np.zeros((seqs.shape[0],6), dtype='float16')
-    print >> sys.stderr, "Processed data from %s" % test_file
+    print("Processed data from %s" % test_file)
     predictions_test = model.predict([seqs, halflifedata], batch_size=20).flatten()
     df = pd.DataFrame(np.column_stack((table.index, predictions_test)), columns=['Info','Pred'])
     df.to_csv(outfile, index=False, header=True, sep='\t')

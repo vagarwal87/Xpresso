@@ -17,7 +17,7 @@ def main():
     (options,args) = parser.parse_args()
 
     if len(args) != 2:
-        print args
+        print(args)
         parser.error('Must provide data file and output directory')
     else:
         data_file = args[0]
@@ -50,12 +50,12 @@ def main():
         train_count = promoters.shape[0] - test_count - valid_count
 
         if options.crossVal:
-            print >> sys.stderr, 'running 10-fold cross val w/ %d sequences ' % promoters.shape[0]
+            print('running 10-fold cross val w/ %d sequences ' % promoters.shape[0])
             kf = KFold(n_splits=10, random_state=42, shuffle=False)
             fold = 0
             for train_index, test_index in kf.split(promoters): #keep aside 1000 examples of train indices for validation set
                 fold += 1
-                print >> sys.stderr, 'fold %d' % fold
+                print('fold %d' % fold)
                 h5f_train = h5py.File(os.path.join(out_dir, str(fold)+'train.h5'), 'w')
                 h5f_valid = h5py.File(os.path.join(out_dir, str(fold)+'valid.h5'), 'w')
                 h5f_test = h5py.File(os.path.join(out_dir, str(fold)+'test.h5'), 'w')
@@ -77,9 +77,9 @@ def main():
                 h5f_test.create_dataset('geneName' , data=np.array(geneNames)[test_index].tolist(), **compress_args)
                 h5f_test.close()
         else:
-            print >> sys.stderr, '%d training sequences ' % train_count
-            print >> sys.stderr, '%d test sequences ' % test_count
-            print >> sys.stderr, '%d validation sequences ' % valid_count
+            print('%d training sequences ' % train_count)
+            print('%d test sequences ' % test_count)
+            print('%d validation sequences ' % valid_count)
             h5f_train = h5py.File(trainfile, 'w')
             h5f_valid = h5py.File(validfile, 'w')
             h5f_test = h5py.File(testfile, 'w')
@@ -106,7 +106,7 @@ def main():
                 h5f_test.close()
 
             if options.orthologMode:
-                print >> sys.stderr, "Finding 1-1 orthologs..."
+                print("Finding 1-1 orthologs...")
                 h5f_train = h5py.File(trainfile2, 'w')
                 h5f_valid = h5py.File(validfile2, 'w')
                 h5f_test = h5py.File(testfile2, 'w')
@@ -120,7 +120,7 @@ def main():
                 h5f_train.create_dataset('promoter', data=promoters2[idxs,:], **compress_args)
                 h5f_train.create_dataset('label'   , data=labels2[idxs], **compress_args)
                 h5f_train.create_dataset('geneName', data=np.array(geneNames2)[idxs].tolist(), **compress_args)
-                print >> sys.stderr, '%d 1-1 mouse orthologs found for training set' % labels2[idxs].shape
+                print('%d 1-1 mouse orthologs found for training set' % labels2[idxs].shape)
                 h5f_train.close()
                 i += train_count
                 orthoids = orthologs[orthologs[0].isin(geneNames[i:i+valid_count])][1]
@@ -129,8 +129,8 @@ def main():
                 h5f_valid.create_dataset('promoter', data=promoters2[idxs,:], **compress_args)
                 h5f_valid.create_dataset('label'   , data=labels2[idxs], **compress_args)
                 h5f_valid.create_dataset('geneName', data=np.array(geneNames2)[idxs].tolist(), **compress_args)
-                print >> sys.stderr, '%d 1-1 mouse orthologs found validation set' % labels2[idxs].shape
-                h5f_valid.close() 
+                print('%d 1-1 mouse orthologs found validation set' % labels2[idxs].shape)
+                h5f_valid.close()
                 i += valid_count
                 orthoids = orthologs[orthologs[0].isin(geneNames[i:i+test_count])][1]
                 idxs = np.isin(geneNames2,orthoids)
@@ -138,7 +138,7 @@ def main():
                 h5f_test.create_dataset('promoter', data=promoters2[idxs,:], **compress_args)
                 h5f_test.create_dataset('label'   , data=labels2[idxs], **compress_args)
                 h5f_test.create_dataset('geneName', data=np.array(geneNames2)[idxs].tolist(), **compress_args)
-                print >> sys.stderr, '%d 1-1 mouse orthologs found for test set ' % labels2[idxs].shape
+                print('%d 1-1 mouse orthologs found for test set ' % labels2[idxs].shape)
                 h5f_test.close()
     else:
         parser.error('Nothing done...Run with --over to overwrite')
@@ -168,12 +168,12 @@ def preprocess(data_file, orthologMode):
     table[table.columns[range(0,5)+[8]]] = np.log10(table[table.columns[range(0,5)+[8]]]+0.1)
     table = table.sample(table.shape[0], replace=False, random_state=1)
     table[table.columns[range(0,9)]] = preprocessing.scale(table[table.columns[range(0,9)]])
-    print "\nPre-processed data...one-hot encoding..."
+    print("\nPre-processed data...one-hot encoding...")
     promoters = one_hot(table['PROMOTER'].as_matrix())
     halflifedata = table[table.columns[range(1,9)]].as_matrix()
     labels = table['EXPRESSION'].as_matrix()
     geneNames = list(table.index)
-    print >> sys.stderr, "Processed data from %s" % data_file
+    print("Processed data from %s" % data_file)
     return promoters, halflifedata, labels, geneNames
 
 if __name__ == '__main__':
