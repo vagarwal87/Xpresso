@@ -1,4 +1,3 @@
-
 # published on http://www.r-statistics.com/2010/07/visualization-of-regression-coefficients-in-r
 # originally written by "<a href="http://statmath.wu.ac.at/~zeileis/">Achim Zeileis</a>"
 # GPL-2

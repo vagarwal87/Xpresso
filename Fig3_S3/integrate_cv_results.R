@@ -3,6 +3,7 @@ library(latticeExtra)
 
 cv_folder = args[1]
 predfolder = args[2]
+outfile = args[3]
 
 files = list.files(path=cv_folder, pattern='.txt', full.names=T)
 
@@ -25,6 +26,6 @@ if (nrow(table) == 10){
     files = apply(table, 1, function(x) { paste(predfolder,x[2],x[1],"predictions.txt",sep='') } )
     say(files)
     table = do.call("rbind", lapply(files, function(x) { read.delim(x) } ) )
-    write.table(table,file=paste(predfolder, "all_crossvalidated_predictions.txt",sep=''), quote=F, row.names=F, sep='\t')
+    write.table(table,file=outfile, quote=F, row.names=F, sep='\t')
 }
 #otherwise cant do, select which trial to use from table due to tie
