@@ -8,12 +8,12 @@ Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence
 
 These tools can be used in a variety of organisms and cell types of interest to:
 
-* Perform hyperparameter optimization in the gene expression prediction task (as shown in Fig 1)
-* Perform evolutionary analyses on human and mouse organisms, as well as one-to-one orthologs of each (as shown in Fig 2)
-* Uncover modes of gene regulation in a cell type of interest that are operating at the transcriptional and post-transcriptional levels (as shown in Fig 3)
-* Evaluate model performance for cell type-specifc and cell type-agnostic models (as shown in Fig 4)
-* Predict transcriptional activity across a genomic locus (as shown in Fig 5)
-* Interpret deep learning models to learn about promoter properties (as shown in Fig 6)
+* Perform hyperparameter optimization in the gene expression prediction task (as shown in **Fig 1**)
+* Perform evolutionary analyses on human and mouse organisms, as well as one-to-one orthologs of each (as shown in **Fig 2**)
+* Uncover modes of gene regulation in a cell type of interest that are operating at the transcriptional and post-transcriptional levels (as shown in **Fig 3**)
+* Evaluate model performance for cell type-specifc and cell type-agnostic models (as shown in **Fig 4**)
+* Predict transcriptional activity across a genomic locus (as shown in **Fig 5**)
+* Interpret deep learning models to learn about promoter properties (as shown in **Fig 6**)
 
 If you find our code or predictions to be helpful for your work, please cite the paper above.
 
