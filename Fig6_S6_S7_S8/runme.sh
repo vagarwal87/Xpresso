@@ -16,7 +16,7 @@ python deep_explain_cv.py cv_human/79trainepoch.14-0.436.h5 pM10Kb_cv/ 9
 python deep_explain_cv.py cv_human/110trainepoch.08-0.425.h5 pM10Kb_cv/ 10
 
 #Fig6A and FigS6A-B
-Rscript FigS6.R pM10Kb_cv/ human
+Rscript FigS6.R pM10Kb_cv/ human #resulting plots in {human/mouse}{gradinput/intgrad}.pdf
 
 for x in {1..10}; do { Rscript best_positions.R pM10Kb_cv/gradinput.$x.txt.gz $x human; } done
 

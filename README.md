@@ -2,9 +2,9 @@
 
 # Xpresso: Predicting gene expression levels from genomic sequence
 
-This repository is intended to accompany our manuscript and enhance the reproducibility of our results. For more information please refer to:
+This repository is intended to accompany our publication, primarily to enhance the reproducibility of our results. For more information please refer to:
 
-Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence using deep convolutional neural networks](https://www.biorxiv.org/content/10.1101/416685v2). 2020. _Cell Reports_.
+Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence using deep convolutional neural networks](https://www.biorxiv.org/content/10.1101/416685v2). 2020. **_Cell Reports_**.
 
 These tools can be used in a variety of organisms and cell types of interest to:
 
@@ -13,7 +13,7 @@ These tools can be used in a variety of organisms and cell types of interest to:
 * Uncover modes of gene regulation in a cell type of interest that are operating at the transcriptional and post-transcriptional levels (as shown in Fig 3)
 * Evaluate model performance for cell type-specifc and cell type-agnostic models (as shown in Fig 4)
 * Predict transcriptional activity across a genomic locus (as shown in Fig 5)
-* Interpret deep learning models (as shown in Fig 6)
+* Interpret deep learning models to learn about promoter properties (as shown in Fig 6)
 
 If you find our code or predictions to be helpful for your work, please cite the paper above.
 
@@ -21,7 +21,7 @@ If you find our code or predictions to be helpful for your work, please cite the
 # Dependencies for running entire pipeline:
 * Python3 modules: numpy, h5py, pandas, sklearn, keras (>=2.2.4-tf), hyperopt, biopython
 
-* R libraries: LSD, data.table, latticeExtra, Biostrings, rhdf5, ROCR, gplots
+* R libraries: LSD, data.table, latticeExtra, Biostrings, rhdf5, ROCR, gplots, mixtools, reshape2, beeswarm, RColorBrewer, zoo, GenomicRanges
 
 * [TensorFlow (>=1.15.0)](https://www.tensorflow.org/install/)
 
@@ -45,13 +45,11 @@ raise a Github issue.
 
 In each Figure's folder, change directories to it and please read the file "runme.sh" first as it provides a general overview of relevant commands that were used sequentially to pre-process the data and generate the figures.
 
-Run the following command in the base Xpresso directory to download the associated datapack and data
-preparation scripts:
+Run the following command in the base Xpresso directory to download the associated datapack:
 
-`wget -r -np -nH --reject "index.html*" --cut-dirs 5 \
- https://krishna.gs.washington.edu/content/members/vagar/Xpresso/data/datasets/`
+`wget -r -np -nH --reject "index.html*" --cut-dirs 5 https://krishna.gs.washington.edu/content/members/vagar/Xpresso/data/datasets/`
 
-The figures will link to this folder accordingly.
+The figures will link to this folder accordingly. Some of the files need to be decompressed, and not all files are provided due to minimize the package size (currently ~11Gb). If you need additional files not provided for the purpose of reproduction, please contact Vikram Agarwal (vagar {at} calicolabs {dot} com).
 
 # Colab
 
