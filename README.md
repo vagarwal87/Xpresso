@@ -25,6 +25,8 @@ If you find our code or predictions to be helpful for your work, please cite the
 
 * [TensorFlow (>=1.15.0)](https://www.tensorflow.org/install/)
 
+* [DeepExplain](https://github.com/marcoancona/DeepExplain)
+
 * [The MEME Suite](http://meme-suite.org/doc/download.html?man_type=web)
 
 * [UCSC tools](http://hgdownload.soe.ucsc.edu/downloads.html#source_downloads) installation, including bigBedToBed

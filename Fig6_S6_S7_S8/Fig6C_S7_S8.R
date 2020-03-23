@@ -1,4 +1,5 @@
 file = args[1]
+outfile = args[2]
 
 b=list()
 mononuc=list()
@@ -19,7 +20,7 @@ for (nuc1 in c('a','c','g','t')){
 	mononuc[[nuc1]]=lapply(levels(a$bin), function(x){ table(do.call(c, lapply(a[a$bin==x,"PROMOTER"], function(y) unlist(gregexpr(paste(nuc1,'|',toupper(nuc1),sep=''),y)) )))/nrow(a[a$bin==x,]) } )
 }
 
-pdf("FigS8.pdf",width=10,height=8) #also makes Fig6C/FigS7 for human
+pdf(outfile,width=10,height=8) #makes Fig6C/FigS7 for human for FigS8 for mouse
 par(mfrow=c(4,4), oma = c(5,4,0,0) + 0.1, mar = c(0,0,1,1) + 0.1)
 i=0
 for (nuc1 in c('a','c','g','t')){

@@ -1,7 +1,8 @@
 library(RColorBrewer)
 library(zoo)
 
-folder = args[1] #human_cv mouse_cv
+folder = args[1]
+species = args[2]
 
 for (type in c('gradinput','intgrad')){ #'saliency', 'elrp', 'deeplift'
   b=list()
@@ -16,7 +17,7 @@ for (type in c('gradinput','intgrad')){ #'saliency', 'elrp', 'deeplift'
     b[[num]]=sapply(levels(a$bin), function(x){ apply(a[a$bin==x,3:(ncol(a)-7)], 2, mean)  } )
   }
 
-  pdf(paste(folder, type, ".pdf",sep=''),width=10,height=4) #ran this for both mouse and human 10-fold CV results for each technique
+  pdf(paste(species, type, ".pdf",sep=''),width=10,height=4) #ran this for both mouse and human 10-fold CV results for each technique
   c=apply(simplify2array(b), 1:2, mean)
   x = 1:10500
   xin = -7000:3499

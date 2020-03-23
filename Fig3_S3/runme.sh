@@ -1,3 +1,5 @@
+# precomputed h5 files for human (pM10Kb_cv) and mouse (pM10Kb_Mouse_cv) are provided only to save space
+# but all can be generated as below:
 python setup_training_files.py --cv Roadmap_FantomAnnotations.InputData.pM10Kb.txt.gz pM10Kb_cv
 python setup_training_files.py --cv Roadmap_FantomAnnotations.InputData.pM10Kb.K562expr.txt.gz pM10Kb_1KTest_K562expr_cv
 python setup_training_files.py --cv Roadmap_FantomAnnotations.InputData.pM10Kb.GM12878expr.txt.gz pM10Kb_1KTest_GM12878expr_cv
