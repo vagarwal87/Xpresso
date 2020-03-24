@@ -45,7 +45,7 @@ raise a Github issue.
 
 In each Figure's folder, change directories to it and please read the file "runme.sh" first as it provides a general overview of relevant commands that were used sequentially to pre-process the data and generate the figures.
 
-**OPTIONAL**: For full functionality, run the following command in the base Xpresso directory to download the associated datapack:
+**OPTIONAL**: For full functionality and to fix symbolic links, run the following command in the base Xpresso directory to download the associated datapack:
 
 `wget -r -np -nH --reject "index.html*" --cut-dirs 5 https://krishna.gs.washington.edu/content/members/vagar/Xpresso/data/datasets/`
 
