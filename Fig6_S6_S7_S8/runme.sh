@@ -18,6 +18,9 @@ python deep_explain_cv.py cv_human/110trainepoch.08-0.425.h5 pM10Kb_cv/ 10
 #Fig6A and FigS6A-B
 Rscript FigS6.R pM10Kb_cv/ human #resulting plots in {human/mouse}{gradinput/intgrad}.pdf
 
+# for human (Fig6C and S7)
+Rscript Fig6C_S7_S8.R Roadmap_FantomAnnotations.InputData.pM10Kb.txt.gz FigS7.pdf
+
 for x in {1..10}; do { Rscript best_positions.R pM10Kb_cv/gradinput.$x.txt.gz $x human; } done
 
 cd motif_analysis/
@@ -63,7 +66,5 @@ fasta-subsample negbestpos1mer_mouse_all.fa 400000 >subsampled_negbestpos1mer_mo
 dreme -oc mouse_all_1mer_400K/ -p subsampled_bestpos1mer_mouse_all_400K.fa -n subsampled_negbestpos1mer_mouse_all_400K.fa -mink 2 -maxk 10
 cd ..
 
-# for human (Fig6C and S7)
-Rscript Fig6C_S7_S8.R Roadmap_FantomAnnotations.InputData.pM10Kb.txt.gz FigS7.pdf
 # for mouse (FigS8)
 Rscript Fig6C_S7_S8.R Mouse_FantomAnnotations.InputData.pM10Kb.txt.gz FigS8.pdf

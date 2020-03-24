@@ -1,0 +1,106 @@
+# DREME 4.12.0
+#     command: dreme -oc mouse_all_1mer_400K/ -p subsampled_bestpos1mer_mouse_all_400K.fa -n subsampled_negbestpos1mer_mouse_all_400K.fa -mink 2 -maxk 10
+#   positives: 400000 from subsampled_bestpos1mer_mouse_all_400K.fa (Mon Mar 26 23:42:00 PDT 2018)
+#   negatives: 400000 from subsampled_negbestpos1mer_mouse_all_400K.fa (Mon Mar 26 23:42:14 PDT 2018)
+#        host: parvati.grid.gs.washington.edu
+#        when: Tue Mar 27 00:03:55 PDT 2018
+
+MEME version 4.12.0
+
+ALPHABET "DNA" DNA-LIKE
+A "Adenine" CC0000 ~ T "Thymine" 008000
+C "Cytosine" 0000CC ~ G "Guanine" FFB300
+N "Any base" = ACGT
+X = ACGT
+. = ACGT
+V "Not T" = ACG
+H "Not G" = ACT
+D "Not C" = AGT
+B "Not A" = CGT
+M "Amino" = AC
+R "Purine" = AG
+W "Weak" = AT
+S "Strong" = CG
+Y "Pyrimidine" = CT
+K "Keto" = GT
+U = T
+END ALPHABET
+
+strands: + -
+
+Background letter frequencies (from dataset):
+A 0.260 C 0.232 G 0.239 T 0.269
+
+
+MOTIF CG DREME-1
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST          CG         CG     186358     136959  4.6e-2762  3.2e-2756
+#               CG         CG     186358     136959  4.6e-2762  3.2e-2756
+
+letter-probability matrix: alength= 4 w= 2 nsites= 419330 E= 3.2e-2756
+0.000000 1.000000 0.000000 0.000000
+0.000000 0.000000 1.000000 0.000000
+
+
+MOTIF CAVC DREME-2
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST        CAVC       GBTG     207580     196664   6.8e-132   2.6e-126
+#             CACC       GGTG      98623      89412   1.3e-130   5.1e-125
+#             CAGC       GCTG     113609     107884   1.0e-046   4.0e-041
+#             CAAC       GTTG      72750      69684   1.7e-019   6.4e-014
+
+letter-probability matrix: alength= 4 w= 4 nsites= 352826 E= 2.6e-126
+0.000000 1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+0.237108 0.350895 0.411996 0.000000
+0.000000 1.000000 0.000000 0.000000
+
+
+MOTIF CA DREME-3
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST          CA         TG     387026     384137   1.3e-067   4.1e-062
+#               CA         TG     387026     384137   1.3e-067   4.1e-062
+
+letter-probability matrix: alength= 4 w= 2 nsites= 1816073 E= 4.1e-062
+0.000000 1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+
+
+MOTIF GGY DREME-4
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST         GGY        RCC     178464     174623   2.7e-018   1.8e-013
+#              GGT        ACC     120888     117686   2.6e-015   1.7e-010
+#              GGC        GCC      91497      89041   2.6e-011   1.7e-006
+
+letter-probability matrix: alength= 4 w= 3 nsites= 277850 E= 1.8e-013
+0.000000 0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000 0.000000
+0.000000 0.426817 0.000000 0.573183
+
+
+MOTIF CCTTTARTCC DREME-5
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST  CCTTTARTCC GGAYTAAAGG       1380       1001   3.8e-015   1.7e-010
+#       CCTTTAATCC GGATTAAAGG       1304        952   6.1e-014   2.8e-009
+#       CCTTTAGTCC GGACTAAAGG         76         49   9.8e-003   4.5e+002
+
+letter-probability matrix: alength= 4 w= 10 nsites= 1382 E= 1.7e-010
+0.000000 1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000
+0.945007 0.000000 0.054993 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+
+
+# Stopping reason: E-value threshold exceeded
+#    Running time: 14961.69 seconds
