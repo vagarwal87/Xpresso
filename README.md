@@ -4,7 +4,7 @@
 
 This repository is intended to accompany our publication, primarily to enhance the reproducibility of our results. For more information please refer to:
 
-Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence using deep convolutional neural networks](https://www.biorxiv.org/content/10.1101/416685v2). 2020. **_Cell Reports_**.
+Agarwal V, Shendure J. [Predicting mRNA abundance directly from genomic sequence using deep convolutional neural networks](https://www.cell.com/cell-reports/pdf/S2211-1247(20)30616-1.pdf). 2020. **_Cell Reports_** 31 (7), 107663.
 
 These tools can be used in a variety of organisms and cell types of interest to:
 
